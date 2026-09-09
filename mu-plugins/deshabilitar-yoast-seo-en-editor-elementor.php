@@ -1,9 +1,8 @@
 <?php
 
-    // Desactiva Yoast SEO SOLO en contexto Elementor (admin + AJAX)
     add_filter('option_active_plugins', function ($plugins) {
 
-        // Detectar Elementor editor o AJAX de Elementor
+        // Detectar el editor de Elementor o AJAX de Elementor
         $es_elementor =
             (isset($_GET['action']) && $_GET['action'] === 'elementor') ||
             (isset($_POST['action']) && strpos($_POST['action'], 'elementor') !== false) ||
